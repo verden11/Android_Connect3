@@ -24,13 +24,11 @@ public class MainActivity extends AppCompatActivity {
             {0, 4, 8}, {2, 4, 6}};                // diagonals
 
     public void dropIn(View view) {
-        view.isInEditMode();
         ImageView counter = (ImageView) view;
 
         int tappedCounter = Integer.parseInt(counter.getTag().toString());
 
         if (gameState[tappedCounter] == 2 && gameIsActive) {
-
             gameState[tappedCounter] = activePlayer;
 
             counter.setTranslationY(-1000f);
@@ -48,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
                 if (gameState[winningPosition[0]] == gameState[winningPosition[1]] &&
                         gameState[winningPosition[1]] == gameState[winningPosition[2]] &&
                         gameState[winningPosition[0]] != 2) {
+
                     String winner = "Red";
                     if (gameState[winningPosition[0]] == 0) {
                         winner = "Yellow";
@@ -60,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
                     gameIsActive = false;
                     LinearLayout layout = (LinearLayout) findViewById(R.id.llPlayAgainLayout);
                     layout.setVisibility(View.VISIBLE);
+                    break;
                 }else{
                     boolean gameIsOver = true;
                     for (int counterState : gameState){
