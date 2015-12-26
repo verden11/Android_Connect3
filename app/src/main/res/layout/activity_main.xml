@@ -135,7 +135,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="New Text"
-            android:textColor="#deda16"
+            android:textColor="#FF00FF"
             android:textSize="30sp"
             android:textStyle="italic" />
 
